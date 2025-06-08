@@ -2,6 +2,7 @@ const translations = {
     en: {
         // Navigation
         home: "Home",
+        healthcare: "Healthcare",
         heartDisease: "Heart Disease",
         breastCancer: "Breast Cancer",
         checkUps: "Check Ups",
@@ -200,6 +201,7 @@ const translations = {
     ar: {
         // Navigation
         home: "الرئيسية",
+        healthcare: "الرعاية الصحية",
         heartDisease: "أمراض القلب",
         breastCancer: "سرطان الثدي",
         checkUps: "الفحوصات",

@@ -1,0 +1,258 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+}
+
+/* Checkup Container */
+.checkup-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 2.5rem; /* from media adjustment */
+}
+
+/* Checkup Title */
+.checkup-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin: 2rem 0;
+}
+
+/* Checkup List */
+.checkup-list {
+    display: flex;
+    gap: 2rem;
+    padding: 2rem;
+    width: 100%;
+    max-width: 1200px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Checkup Card */
+.checkup-card {
+    background: #f6f7fb;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    padding: 2rem 1.5rem;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: default;
+}
+
+.checkup-card:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 6px 24px rgba(227,99,118,0.12);
+}
+
+/* Icons */
+.checkup-icon {
+    font-size: 2.8rem;
+    /* margin: 1rem; */
+}
+
+.icon-heart { color: #e36376; }
+.icon-breast { color: #ff96a7; }
+.icon-skin { color: #4db6ac; }
+
+/* Checkup Text */
+.checkup-name {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+}
+
+.checkup-desc {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 1.2rem;
+}
+
+/* Checkup Buttons */
+.checkup-btn {
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, filter 0.2s;
+    background: #e36376; 
+}
+
+.checkup-btn.breast { background: #ff96a7; }
+.checkup-btn.skin { background: #4db6ac; }
+
+.checkup-btn:hover {
+    filter: brightness(0.95);
+}
+
+/* Form Overlay */
+.form-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #fff;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+/* Form Styles inside overlay */
+.form-overlay form {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    text-align: center;
+    position: relative;
+    box-sizing: border-box;
+    overflow-x: auto;
+    margin: 0;
+}
+
+/* Remove custom form-group styles since we're using Bootstrap */
+.form-group {
+    margin-bottom: 0;
+}
+
+/* Update input and select styles to match Bootstrap */
+.form-overlay input[type="number"],
+.form-overlay input[type="text"],
+.form-overlay select {
+    width: 100%;
+    margin: 0;
+    display: block;
+    padding: 0.7rem 1rem;
+    border: 1.5px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 1rem;
+    background: #fff;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+    transition: border 0.2s, box-shadow 0.2s;
+    outline: none;
+}
+
+/* Update focus styles to match Bootstrap */
+.form-overlay input[type="number"]:focus,
+.form-overlay input[type="text"]:focus,
+.form-overlay select:focus {
+    border: 1.5px solid #e36376;
+    box-shadow: 0 2px 8px rgba(227,99,118,0.08);
+}
+
+/* Form Label Styling */
+.form-label {
+    font-size: 1.2rem;
+    margin: 1rem;
+}
+
+/* Back button styling */
+.form-overlay .btn-secondary {
+    position: absolute;
+    top: 1.2rem;
+    left: 1.2rem;
+    background: #e36376;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, filter 0.2s;
+}
+
+.form-overlay .btn-secondary:hover {
+    filter: brightness(0.95);
+}
+
+/* Submit button styling */
+.form-overlay .btn-primary {
+    border: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, filter 0.2s;
+}
+
+.form-overlay .btn-primary:hover {
+    filter: brightness(0.95);
+}
+
+/* Form-specific button colors */
+.form-overlay #heart-form .btn-primary { background: #e36376; width:100vw; }
+.form-overlay #breast-form .btn-primary { background: #ff96a7; }
+.form-overlay #skin-form .btn-primary { background: #4db6ac; }
+
+/* Modern Image Upload Styling */
+.form-group input[type="file"] {
+    display: none;
+}
+
+.form-group .custom-file-upload {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem;
+    border: 2px dashed #4a90e2;
+    border-radius: 12px;
+    background: #f8f9fa;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    width: 100%;
+    max-width: 400px;
+    margin: 2rem auto;
+}
+
+.form-group .custom-file-upload:hover {
+    background: #f1f8ff;
+    border-color: #2196f3;
+}
+
+.form-group .custom-file-upload i {
+    font-size: 2.5rem;
+    color: #4a90e2;
+}
+
+.form-group .custom-file-upload span {
+    color: #4a90e2;
+    font-weight: 500;
+}
+
+/* Image Preview */
+.image-preview {
+    margin-top: 1rem;
+    max-width: 300px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.image-preview img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
